@@ -7,7 +7,7 @@ const ViewReturnRequests = () => {
 
   useEffect(() => {
     const fetchReturns = async () => {
-      const response = await axios.get('/api/return');
+      const response = await axios.get('api/return');
       setReturns(response.data.data);
     };
 

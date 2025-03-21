@@ -51,7 +51,7 @@ const ProfilePage = () => {
     const handleSave = async () => {
         try {
             
-            const response = await fetch(`${backendUrl}/api/user/update-profile`, {
+            const response = await fetch(`${backendUrl}api/user/update-profile`, {
                 method: "PUT",
                 headers: {
                     Authorization: `Bearer ${token}`, 

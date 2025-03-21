@@ -41,7 +41,7 @@ const ShopContextProvider = (props) => {
     if (token) {
       try {
         await axios.post(
-          `${backendUrl}/api/cart/add`,
+          `${backendUrl}api/cart/add`,
           { itemId, size },
           { headers: { token } }
         );
@@ -69,7 +69,7 @@ const ShopContextProvider = (props) => {
     if (token) {
       try {
         await axios.post(
-          `${backendUrl}/api/cart/update`,
+          `${backendUrl}api/cart/update`,
           { itemId, size, quantity },
           { headers: { token } }
         );
@@ -116,7 +116,7 @@ const ShopContextProvider = (props) => {
   const getUserCart = async (token) => {
     try {
       const response = await axios.post(
-        `${backendUrl}/api/cart/get`,
+        `${backendUrl}api/cart/get`,
         {},
         { headers: { token } }
       );
@@ -137,7 +137,7 @@ const ShopContextProvider = (props) => {
     }
   
     try {
-      const response = await axios.get(`${backendUrl}/api/profile/profile`, {
+      const response = await axios.get(`${backendUrl}api/profile/profile`, {
         headers: { Authorization: `Bearer ${token}` },
       });
   
@@ -181,7 +181,7 @@ const ShopContextProvider = (props) => {
     try {
       if (!token) return;
 
-      const response = await axios.get(`${backendUrl}/api/wishlist`, {
+      const response = await axios.get(`${backendUrl}api/wishlist`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

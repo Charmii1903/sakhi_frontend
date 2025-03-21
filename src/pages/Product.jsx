@@ -34,7 +34,7 @@ const Product = () => {
   // Fetch product reviews
   const fetchReviews = async () => {
     try {
-      const response = await axios.get(`${backendUrl}/api/reviews/${productId}`);
+      const response = await axios.get(`${backendUrl}api/reviews/${productId}`);
       if (response.data.success) {
         setReviews(response.data.reviews);
       }
@@ -49,7 +49,7 @@ const Product = () => {
 
     try {
       const response = await axios.post(
-        `${backendUrl}/api/product/rating`,
+        `${backendUrl}api/product/rating`,
         {
           productId: productData._id,
           rating: newRating,
@@ -79,7 +79,7 @@ const Product = () => {
       const reviewData = { productId, comment, rating, userData };
 
       const response = await axios.post(
-        `${backendUrl}/api/reviews/add`,
+        `${backendUrl}api/reviews/add`,
         reviewData,
         {
           headers: {
