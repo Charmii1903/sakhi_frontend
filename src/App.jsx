@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import About from './pages/About';
 import Contact from './pages/Contact';
@@ -34,10 +34,16 @@ const App = () => {
 
   
   useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://app.fastbots.ai/embed/cm8j3m6pr0wjmrik6bw8w2jth";
+    script.defer = true;
+    script.setAttribute("data-bot-id", "cm8j3m6pr0wjmrik6bw8w2jth");
+
     const timer = setTimeout(() => {
       setLoading(false);
     }, 500); 
     return () => clearTimeout(timer);
+    
   }, []);
 
   return (
