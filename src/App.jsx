@@ -38,6 +38,7 @@ const App = () => {
     script.src = "https://app.fastbots.ai/embed/cm8j3m6pr0wjmrik6bw8w2jth";
     script.defer = true;
     script.setAttribute("data-bot-id", "cm8j3m6pr0wjmrik6bw8w2jth");
+    document.body.appendChild(script);
 
     const timer = setTimeout(() => {
       setLoading(false);
@@ -47,7 +48,10 @@ const App = () => {
   }, []);
 
   return (
+    
     <>
+    document.body.removeChild(script);
+    
       {loading && <Loading />} 
       {!loading && (
         <div className="px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw] bg-orange-50">
