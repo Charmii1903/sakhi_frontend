@@ -28,30 +28,27 @@ import NotFound from './components/NotFound';
 import RecommendationsPage from './pages/RecommendationsPage';
 import ProfilePage from './pages/Profile';
 
-
 const App = () => {
   const [loading, setLoading] = useState(true);
 
-  
   useEffect(() => {
     const script = document.createElement("script");
-    script.src = "https://app.fastbots.ai/embed/cm8j3m6pr0wjmrik6bw8w2jth";
+    script.src = "https://app.fastbots.ai/embed.js";
     script.defer = true;
-    script.setAttribute("data-bot-id", "cm8j3m6pr0wjmrik6bw8w2jth");
+    script.setAttribute("data-bot-id", "cm8isjnzc0mesrik69444nb8v");
     document.body.appendChild(script);
 
     const timer = setTimeout(() => {
       setLoading(false);
     }, 500); 
-    return () => clearTimeout(timer);
-    
+    return () => {
+      clearTimeout(timer);
+      document.body.removeChild(script);
+    };
   }, []);
 
   return (
-    
     <>
-    document.body.removeChild(script);
-    
       {loading && <Loading />} 
       {!loading && (
         <div className="px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw] bg-orange-50">
@@ -61,7 +58,6 @@ const App = () => {
           <SearchBar />
           <ScrollToTop />
 
-          
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/collection" element={<Collection />} />
