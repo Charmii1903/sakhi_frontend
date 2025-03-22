@@ -35,7 +35,7 @@ const App = () => {
     const script = document.createElement("script");
     script.src = "https://app.fastbots.ai/embed.js";
     script.defer = true;
-    script.setAttribute("data-bot-id", "cm8isjnzc0mesrik69444nb8v");
+    script.setAttribute("data-bot-id", "cm8j3m6pr0wjmrik6bw8w2jth");
     document.body.appendChild(script);
 
     const timer = setTimeout(() => {
