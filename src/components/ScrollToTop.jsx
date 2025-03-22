@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { ArrowUpIcon } from 'lucide-react'; // Using Lucide icons for modern aesthetics
 
 const ScrollToTop = () => {
@@ -30,7 +30,7 @@ const ScrollToTop = () => {
       {isVisible && (
         <button
           onClick={handleScrollToTop}
-          className="fixed bottom-8 right-8 bg-orange-500 text-white rounded-full w-14 h-14 flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300 ease-in-out"
+          className="fixed bottom-8 left-8 bg-orange-500 text-white rounded-full w-14 h-14 flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300 ease-in-out"
           aria-label="Scroll to Top"
         >
           <ArrowUpIcon size={24} />
